@@ -13,8 +13,8 @@
 ## The Team 👥
 ---
 - @ajlaw138 - Alistair Law - Geography with Economics, 3rd year 🐧
-- @harrytugwell - Harry Tugwell - Politics with Data Science, 1st year 🐬
-- @SFan12 - Tessy Fan - Politics with Data Science, 1st year 🐢
--  -  Charlotte Hong - Politics with Data Science, 1st year
+- @harrytugwell - Harry Tugwell - Politics and Data Science, 1st year 🐬
+- @SFan12 - Tessy Fan - Politics and Data Science, 1st year 🐰
+-  -  Charlotte Hong - Politics and Data Science, 1st year
 -  -  Daniyal Mirza - Economics, 2nd year
 ---
