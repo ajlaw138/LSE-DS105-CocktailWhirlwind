@@ -16,5 +16,5 @@
 - @harrytugwell - Harry Tugwell - Politics and Data Science, 1st year 🐬
 - @SFan12 - Tessy Fan - Politics and Data Science, 1st year 🐰
 - @Charlotte1126 -  Charlotte Hong - Politics and Data Science, 1st year
-- Daniyal Mirza - Economics, 2nd year
+- @dmir123 - Daniyal Mirza - Economics, 2nd year
 ---
