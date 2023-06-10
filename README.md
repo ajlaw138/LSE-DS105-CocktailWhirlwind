@@ -21,7 +21,7 @@
 
 ## Motivation
 Cocktails are great; they can be the start of a great night out, or a way to meet someone, or catch up with a friend. This is especially the case in London, 
-with a thriving bar scene, amounting to £587 million in the UK in 2019 [1^]. By looking to capture this culture in data, we aim to identify price variations in 
+with a thriving bar scene, amounting to £587 million in the UK in 2019 [^1]. By looking to capture this culture in data, we aim to identify price variations in 
 cocktails across London, to help those looking for that perfect cocktail that is within their budget. Matching geo-located data with price data, we can
 generate a tool that will help people find the right bar, that has the right cocktail. 
 
