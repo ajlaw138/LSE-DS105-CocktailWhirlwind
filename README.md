@@ -109,7 +109,7 @@ The list of bar websites used are as follows:
 [^2]: https://www.oed.com/viewdictionaryentry/Entry/35499 (under II.3.a.; last viewed 12/06/2023) 
 [^3]: https://www.forbes.com/sites/elvaramirez/2019/05/22/make-mine-a-mocktail-why-the-non-alcoholic-drinks-trend-is-here-to-stay/?sh=33f6e9be3eb2 (last viewed 12/06/2023)
 [^4]: https://www.thecocktaildb.com/ (last viewed 12/06/2023)
-[^5]: 
-[^g]:
+[^5]: https://www.masterofmalt.com/ (last viewed 12/06/2023)
+[^6]: https://www.timeout.com/london/search#/?sort=relevance&q=cocktail%20bars&viewstate=list (last viewed 12/06/2023)
 
 ## Appendix 
