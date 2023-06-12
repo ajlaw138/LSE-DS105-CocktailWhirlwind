@@ -42,8 +42,16 @@ Master of Malt is a UK distributor of various wines, spirits, and other alcohol 
 on distributor prices, alcoholic content and volumes. By using BeautifulSoup4, the website can be scraped for this information, as it appears in a regular format. 
 Thus, a function can be defined to retrieve important information amounting to a panda data frame.
 
-## Our dataframe
+#### The Alchemist - Web Scraping
+Data on cocktail prices was collected by scraping The Alchemist's website. This provided some insight into what price levels are like, closer towards the centre of 
+London. This data was cleaned by checking for duplicates, and then removing 'NaN' values, which was present in the price column. This meant some loss of data, due to
+some prices being missing from the website, but out of the 78 cocktails collected. 63 were retained. The final piece of data cleaning was simply converting the prices 
+to a float. 
 
+#### Google Maps - API
+Google maps has estimations of suggested price levels, based on reviews made by visitors. Thus, a price level (on a scale from 1 to 5) is determined, with 1 being the 
+cheapest, and 5 being the most expensive. A set location is given, with the API retrieving the Place IDs, bar name, and it's given price level. Using a private API key,
+name and price level are saved to a csv, with 18 results of bars in London.
 
 ## Explanatory Analysis and Visualisations 
 
