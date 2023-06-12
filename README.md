@@ -87,7 +87,7 @@ chain bars and 2 independent bars, one of which is in Central London, and the ot
 
 #### Bar Websites - Web Scraping
 Data on cocktail prices was collected by scraping each bar's website. This provided insight into cocktail prices at each bar, and was added to a dataframe.
-This data was cleaned by checking for duplicates, and then removing 'NaN' values. The final piece of data cleaning was simply converting the prices to a float. There are 
+This data was cleaned by checking for duplicates, and then removing 'NaN' values. The final piece of data cleaning was simply converting the prices to a float. Floats are compatible with mathematical operations such as averages and therefore are more useful to use within the process of visualisation as leverage is increased. There are 
 variations in code for each bar, based on the html tag that is assigned to the price, which differed between websites, with other similarly small variations. However, in 
 general, the code for each website was structured in the same manner as described. 
 
