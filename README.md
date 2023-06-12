@@ -35,6 +35,11 @@ taste profiles were most popular. However, finding data sources proved difficult
 providing a tool that is aimed more towards consumers than businesses. It could still prove useful to bars, by providing a quick way to check cocktail prices 
 in an area, so that they can stay competitive in the market. 
 
+To go into further detail, we specified our focus on certain bars in London. For each of these bars we used various methods to extract and clean data on the price of certain cocktails on their respected menus. From this data, we aimed to highlight overlaps between different cocktails relative to price, concluding with analysis on the popularity of cocktails. Within this particular topic, the term popularity can be loosely defined. Therefore, we decided to focus directly on the price of cocktails. Since ‘price’ represents a large factor within the cocktail sector, we specifically concentrated on ‘price range analysis’. 
+
+The objectives of our price range analysis were to determine specific ranges of cocktail prices in London relative to their respected bars.  Identifying overlaps within popularity demonstrates the popularity of certain cocktails, further calculating averages, minimum and maximum prices allows for us to obtain a broader picture of the pricing landscape. From this, outliers or trends can be highlighted.
+
+
 ---
 
 ## Data Gathering Process
