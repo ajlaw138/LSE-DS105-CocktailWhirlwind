@@ -17,7 +17,7 @@
 - @harrytugwell - Harry Tugwell - Politics and Data Science, 1st year 🐬
 ---
 
-## Motivation 
+## Motivation 💪
 Cocktails are great; they can be the start of a great night out, or a way to meet someone, or catch up with a friend. This is especially the case in London, 
 with a thriving bar scene, amounting to £587 million in the UK in 2019. [^1] By looking to capture this culture in data, we aim to identify price variations in 
 cocktails across London, to help those looking for that perfect cocktail that is within their budget. 
@@ -28,23 +28,22 @@ this would be noticeable, and since bars separate their menus too, this inclusio
 **mocktails** (mock cocktails), which are non-alcoholic cocktails, are included too in order to provide more depth to the study, since mocktails are seeing increasing 
 popularity in the UK market. [^3] Hence, insights gained through our analysis will be of even more use in an ever-changing market. 
 
-### How our project changed 
+### How our project changed 🔀
 Our project was originally motivated by looking to understand trends in cocktail popularity, trying to understand which cocktails were in fashion, and what 
 taste profiles were most popular. However, finding data sources proved difficult, and as such, our analysis moved towards analysing price variation instead, 
 providing a tool that is aimed more towards consumers than businesses. It could still prove useful to bars, by providing a quick way to check cocktail prices 
 in an area, so that they can stay competitive in the market. 
 
-To go into further detail, we specified our focus on certain bars in London. For each of these bars we used various methods to extract and clean data on the price of certain cocktails on their respected menus. From this data, we aimed to highlight overlaps between different cocktails relative to price, concluding with analysis on the popularity of cocktails. Within this particular topic, the term popularity can be loosely defined. Therefore, we decided to focus directly on the price of cocktails. Since ‘price’ represents a large factor within the cocktail sector, we specifically concentrated on ‘price range analysis’. 
+To go into further detail, we specified our focus on certain bars in London. For each of these bars we used web scraping to extract and clean data on the price of certain cocktails on their respective menus. From this data, we aimed to highlight overlaps between different cocktails relative to price, concluding with analysis on the popularity of cocktails. Within this particular topic, the term popularity can be loosely defined. Therefore, we decided to focus directly on the price of cocktails. Since ‘price’ represents a large factor within the cocktail sector, we specifically concentrated on ‘price range analysis’. 
 
 The objectives of our price range analysis were to determine specific ranges of cocktail prices in London relative to their respected bars.  Identifying overlaps within popularity demonstrates the popularity of certain cocktails, further calculating averages, minimum and maximum prices allows for us to obtain a broader picture of the pricing landscape. From this, outliers or trends can be highlighted.
 
-
 ---
 
-## Data Gathering Process
+## Data Gathering Process 📈
 We used a variety of databases to collate information on cocktails and bars, with some forming part of our initial analysis. 
 
-### Initial exploration
+### Initial exploration 🔍
 
 #### The CocktailDB - API [^4]
 This database provided through this API presented information on over 400 cocktails, including data on ingredients, recipe, measurements, glass type and the drink
@@ -75,13 +74,13 @@ prior to adding data, data types are assigned already and as such, the Master of
 
 ---
 
-### Final Data Sources 
+### Final Data Sources 🔢
 
 #### Time Out London [^6]
 This website was used to select bars that would have their prices analysed. Ideally, a random selection would be used, in which bar names would be scraped with their 
 website links. Assigning a number ID to each bar would then allow for a true random number generator to choose bars at random. However, not all bars display their prices, 
 and those that do, may display prices in a format that would be difficult to scrape. As such, the five chosen provide insight into what prices in London are like, with 3 
-chain bars and 2 independent bars, one of which is in Central London, and the other in the suburbs. Each bar's website is scraped, as described below.
+chain bars and 2 independent bars, one of which is in Central London, and the other in the suburbs. Each bar's website is scraped, as described below. 
 
 
 #### Bar Websites - Web Scraping
@@ -98,14 +97,17 @@ The list of bar websites used are as follows:
 | Dirty Martini |  https://dirtymartini.uk.com/cocktails-food/cocktails/ | Multiple Locations |
 | Fire & Ice Lounge | https://kiosx.com/cocktails-and-spirits/ | Uxbridge | 
 | BEasy Bar | https://beasybar.co.uk/beasy-drinks-menu | Soho |
+| Cocktails and Games | https://cocktailsandgames.co.uk/ | Catering nationwide|
+
+In the case of Cocktials and Games, this company was chosen as a comparison for prices. Since this is a catering company, they likely have a lower operating costs as opposed to a bar, as they are located outside of London, in Bournemouth. However, they provide data on ingredients list, as well as over 70 cocktails and shots, with also categories for each cocktail to help with analysis.   
 
 ---
 
-## Explanatory Analysis and Visualisations 
+## Explanatory Analysis and Visualisations 📊
 
-Once all the data on bar prices for cocktails was gathered, this was appended to the `price_data` dataframe. This dataframe was then used to help visualise the cocktail price data for the above mentioned bars in London, containing the ‘name’, ‘composition’, ‘price’ and ‘description’ as headers. 
+Once all the data on bar prices for cocktails was gathered, this was appended to the `price_data` dataframe. This includes prices for all bars, except Cocktails and Games. In the case of cocktail duplicates (where the same cocktail is served in multiple bars), for the purposes of this price analysis, there is no concern for the inclusion of these, since this exercise is simply to analyse how prices vary across London bars. This dataframe was then used to help visualise the cocktail price data for the above mentioned bars in London, containing the ‘name’, ‘composition’, ‘price’ and ‘description’ as headers. 
 
-`price_data` contains an automatically assigned index, non-reflective of any ranking. The ‘Name’ header is a string of the cocktail’s name, with the ‘composition’ header being a list of ingredients. The ‘description’ header, again containing strings, provides a text description of the drink, as one website contained this extra information, with the others not. This column is not used during analysis. The ‘price’ header contains floats, representing prices in Pound Sterling (£). Figure 2 displays an example of the `price_data` dataframe. The dataframe holds 78 rows, with 4 columns. 
+`price_data` contains an automatically assigned index, non-reflective of any ranking. The ‘Name’ header is a string of the cocktail’s name, with the ‘composition’ header being a list of ingredients. The ‘description’ header, again containing strings, provides a text description of the drink, as one website contained this extra information, with the others not. This column is not used during analysis. The ‘price’ header contains floats, representing prices in Pound Sterling (£). Figure 2 displays an example of the `price_data` dataframe. 
 
 Data displayed below is an example, and not necessarily representative of the collected data. 
 
@@ -121,21 +123,37 @@ Data displayed below is an example, and not necessarily representative of the co
 Using the `plotnine` package, the `price_data` dataframe is used to generate a violin plot, box plot and a density curve. In using these visualisation techniques, the distribution of prices can be easily analysed.
 
 #### Violin plot and density curve
+![Violinplot_PriceDensity](https://github.com/ajlaw138/LSE-DS105-CocktailWhirlwind/assets/66684754/e42c7e14-3222-4811-9d8d-f14ed9e24ab5)
+![DensityCurve_price](https://github.com/ajlaw138/LSE-DS105-CocktailWhirlwind/assets/66684754/4b49be45-4ea8-4e2d-bb4a-196cbb99b732)
+
 These visualise the distribution curve of cocktail prices, with the large majority of cocktail prices falling in between **£12-14**, with some cocktails clustering below the £11 price line. When comparing to a normal distribution, it can be said that there is positive skew, as there are no cocktails cheaper than £10, and as such, the bottom tail of the curve is higher than expected for a normal distribution
 
 #### Box plot
+![BoxPlot_PriceDistribution](https://github.com/ajlaw138/LSE-DS105-CocktailWhirlwind/assets/66684754/316d4d37-e990-4794-8414-4abc1e4e9208)
+
 This plot confirms the observations obtained from the price density curve. The median price is £12.50, lying closer to the upper quartile, confirming the positive skew. The minimum price is £10, and maximum of £16, meaning the range is £6. The prices are not extremely dispersed, nor very dense. No outliers are observed. 
 
 From this analysis, what we can observe is that cocktails are first of all, **quite expensive**. Considering that currently (as of 2023) we live in a time of rising living costs, going out for cocktails is not cheap, with the average cocktail setting you back the equivalent of 3 ‘Meal Deals’ (exact number varies by retailer). [^7] Interestingly, it seems that beyond £14, prices drop off quite sharply, as seen in the density curve graph. This suggests that businesses know consumers are not willing to pay much more than that, and as such, will not set many prices beyond this threshold. 
 
 #### Composition Word Cloud for `price_data`
+![WordCloud_CocktailComponents](https://github.com/ajlaw138/LSE-DS105-CocktailWhirlwind/assets/66684754/4ef83af0-aafc-4345-b30f-10120b05ac0f)
+
 Using the ‘composition’ header for `price_data`, the most common ingredients in the cocktails served by bars can be seen, appearing larger if occurring more frequently. The most utilised spirits are vodka, rum and liqueur. Seemingly, the most common taste profile is tropical as citrus, lime and pineapple are the most popular. Soda and syrups is a common mixer too. Another noticeable element is ‘fresh’, suggesting that maybe bars should look to use other words to describe their ingredients, as if one is paying over £10 for a drink, the fruit being fresh should be given. 
 
 This word cloud is a simple visualisation of common words appearing in the ‘composition’ header, but by no means is perfect. The data itself does not represent what are the most popular drinks, as the team did not have access to sale data. As such, the results could present inferred popularity, in which the most common cocktails and ingredients being chosen by bars. Of course, bars choose menus as part of a business decision, so that the cocktails served will generate the most revenue for the bars, and so more common recurring cocktails across multiple bars could signify a ‘popular cocktail’. However, this is not conclusive, not proved in this study, and as such, the word cloud is used to just visualise common trends in cocktail composition. 
 
-### Analysing the relationship between price and type
-*insert how type was assigned and obtained from* 
-This formed a new dataframe, named `type_data`, which had a similar layout to `price_data`, but instead of a ‘description’ column, a ‘type’ column exists. Again, an index was automatically generated, with no meaning to order.  Figure 3 displays an example of the `type_data` dataframe. This dataframe contains 79 rows and 4 columns.
+#### Average price of drinks with common ingredients 
+In order to understand how drink composition might affect price, prices of drinks with common ingredients are grouped, and an average obtained. These results are displayed in the bar chart below.
+
+![barchart_average_price_ingredients](https://github.com/ajlaw138/LSE-DS105-CocktailWhirlwind/blob/development/figures/Barchart_average%20price_ingredients.png)
+
+This highlights the cost of alcohol, as for vodka and rum, the average price is higher when compared to non-alcoholic ingredients. This is true except for liqueur, which is the second cheapest. This could suggest that cheaper cocktails use more of liqueurs for alcoholic content, rather than spirits like vodka and rum. 
+
+--- 
+
+### Analysing the relationship between price and type using Cocktail and Games
+In order to look at how the 'type' of cocktail changes the way in which price varies, Cocktail and Games' website is used to scrape data, as they provide categories for cocktails. 
+This formed a new dataframe, named `type_data`, which had a similar layout to `price_data`, but instead of a ‘description’ column, a ‘type’ column exists, using the categories provided by Cocktail and Games. Again, an index was automatically generated, with no meaning to order.  Figure 3 displays an example of the `type_data` dataframe. This dataframe contains 79 rows and 4 columns.
 
 Data displayed below is an example, and not necessarily representative of data collected. 
 
@@ -148,17 +166,16 @@ Data displayed below is an example, and not necessarily representative of data c
 *Figure 3 - `type_data` dataframe with example data.*
 
 A summary statistics table was generated too, displaying the count of each type, the mean price, standard deviation, minimum, maximum and quartile boundaries. Prices are all in Pound Sterling (£). These are displayed in Appendix A.
-
-
-
 This provides some indication as to the variations in prices depending on the type of drink purchased. But numbers just by themselves can be boring, so the use of graphs is important to really understand and breakdown this data.
 
 ### Visualisation of `type_data`
 Using the ggplot package again, a boxplot and bar chart are used to analyse relationships between the type of cocktail, and its price, as well as how the number of ingredients changes too.
 
 #### Boxplot 
+![BoxPlot_CocktailPrice](https://github.com/ajlaw138/LSE-DS105-CocktailWhirlwind/assets/66684754/c357d3e9-5e3d-425b-99ca-81618d49eb2f)
+
 A clear segregation can be seen between drinks below £4.25, and those above £8.25. This shows the stark contrast in cost between what are effectively shots, and traditional cocktails. 
-With most traditional cocktail types exhibiting just one price, except ‘champagne cocktails’ which has one cheaper outlier and ’modern cocktails’ that has some variation. 2 drinks have a cheaper price of £8.25, whilst the other 7 cost £8.75. From analysing these cocktails, we can see that cocktails themselves are similar price, ranging from £8.25 to £9.25, with just champagne cocktails costing more. 
+With most traditional cocktail types exhibiting just one price, except ‘champagne cocktails’ which has one cheaper outlier and ’modern cocktails’ that has some variation. 2 drinks have a cheaper price of £8.25, whilst the other 7 cost £8.75. From analysing these cocktails, we can see that cocktails themselves are similar price, **ranging from £8.25 to £9.25**, with just champagne cocktails costing more.
 
 When comparing the lower tier of prices, interestingly, mocktails cost just £3.50, illustrating the extra cost of alcohol and spirits cause a price increase of around £5. The ‘Shots’ type has a range of £1 between £3-4, with most costing £3. The other types, brandy, liquors, tequila and whiskeys, are spirit shots, and are not the subject of this study, and are simply displayed for comparison purposes. 
 
@@ -179,26 +196,49 @@ def split_count(t):
 
 ```
 This function is used on the ‘composition’ column, and using a `groupby` to aggregate the data under each cocktail type. Using ggplot, this data is converted into a bar chart.
+
+![BarChart_IngredNumber](https://github.com/ajlaw138/LSE-DS105-CocktailWhirlwind/blob/development/figures/BarChart_IngredNumber.png)
+
 The bar chart shows that premium cocktails clearly use more ingredients when compared to other cocktail types, with mocktails, champagne cocktails and prosecco cocktails being less complicated. Shots are unsurprisingly the least ingredient intensive. 
 
 As such, shots and mocktails being cheaper, and containing less ingredients have a clear correlation. However, this correlation does not continue as champagne and prosecco cocktails cost similar to premium cocktails (more in the case of champagne cocktails), yet have less ingredients. Thus, the price of champagne and prosecco is what causes these cocktails to cost more, even though they are not as ingredient dense. 
 
 #### Composition word cloud for `type_data`
+![WordCloud_Ingredients](https://github.com/ajlaw138/LSE-DS105-CocktailWhirlwind/assets/66684754/5e26a474-0890-41a2-af81-3f9579d1cf57)
+
 This word cloud is slightly different when compared to the one for `price_data`. Here, liqueur is the most common spirit, with gin and prosecco being quite prominent specifically white rum is more frequent, with vodka still being popular. Again, citrus flavours occur the most with lime, orange and lemon all occurring frequently, with mint also being somewhat common. Coffee is used more often, opposed to `price_data` where coffee was not used much. There is also less mention of mixers like soda or syrup. Coming up again is the use of ‘fresh’ which clearly shows that bars should use a thesaurus and find a different word to make their menu descriptions more interesting. 
 
+#### Average price of specific drinks with common ingredients
+Similar to the analysis conducted for the sample bars drink prices, this is done again for Cocktail and Games. This will help identify the driving cause of higher prices for some cocktails. 
+
+However, due to limited sample size, a boostrap method is employed in order to circumvent some of the statistical issues arising from a small sample. This resamples the cocktails at 80% of the original sample size. After this, the average price of each component is calculated, and put back into the original sample. This is done 1000 times, producing the top 6 components with the largest distribution of prices. These are displayed in the below violin plots
+
+![Boostrapped_Violin_Plot](https://github.com/ajlaw138/LSE-DS105-CocktailWhirlwind/blob/development/figures/bootstrap.png) 
+
+Here, gin and prosecco are consistently the most expensive ingredients, with liqueurs ranging from being both the cheapest, and most expensive. This is likely a more accurate representation of liqueur cocktail prices, as the price of liqueurs can vary greatly. Fresh ingredients, juice and lime see some variation, about £1, but on the whole are cheaper than their alcoholic ingredient counterparts.
+
+---
+## Conclusions 🎆
 ### What are the key trends
-- Cocktails in Central London cost more (about £4)
-  -	Cocktail rarely exceeded £14 in Central, and £9.25 in the suburbs
+- Cocktails in London cost more (about £4)
+  -	Cocktail rarely exceeded £14 in London, and £9.25 elsewhere
 -	Cocktail complexity is not necessarily associated with higher cost
+  - Contents of the drink is what matters 
 -	Mocktails are as cheap as a shot (alcohol is expensive)
 -	Citrus flavours are the most commonly used ingredient 
 -	Bar menu designers need to find a different word than ‘fresh’
 
-## Conclusions 
-### Summary 
+### Summary 🥳
+Cocktails in London are quite expensive; going out for cocktail drinks will set you back at least £10 in the capital. Even if you pay more, you may not necessarily get a more complex drink. Given these findings, couple with mocktails being a great cheap non-alcoholic alternative, maybe cocktails are not worth it, and we should all stay sober! Simply based on price, this could be a conclusion. But instead, the focus should not be on the cocktail price, but of what makes up the cocktail; after all cocktails are mixtures. Thus, for price sensitive consumers in a period of high living costs, drinks that use liqueurs rather than spirits might be the way to save a little more money.
 
-### Limitations 
+### Limitations 😞
+Overall, this price range analysis forms a good starting point for future work. Due to limitations, there were simply too many issues that prevented the team from conducting the original plan. Struggles of finding the right way to define popularity, or even gain representative data to convey this caused the direction of the study to change. 
 
+Furthermore, due to limitations in the Google Maps API, on the price level of the bar could be obtained, instead of a detailed breakdown of prices for each cocktail (as shown in `\notebooks\googlemap.py`). This limited the team to using just one data collection method, in web scraping. 
+
+For the data collected, there were initial difficulties of processing multiple bars, as there was no central database. Hence, data had to be manually collected through web scraping. In the case of menus coming in pdf form, a converter tool had to be used in order to convert these prices into `Excel` format. With the data gather, due to some being of limited sample size, the bootstrap method was employed to try and circumvent this, although is not a perfect solution to the issue. 
+
+---
 ## Appendix A
 
 |type | count | mean | std | min | max |
@@ -218,8 +258,7 @@ This word cloud is slightly different when compared to the one for `price_data`.
 
 *`type_data` summary statistics based on each cocktail type (quartile data omitted). Figures rounded to 2 D.P. where applicable.*
 
-
-
+## Sources
 [^1]: https://drinksint.com/news/fullstory.php/aid/8346/UK_cocktail_market_valued_at__A3587m.html (last viewed 10/06/2023)
 [^2]: https://www.oed.com/viewdictionaryentry/Entry/35499 (under II.3.a.; last viewed 12/06/2023) 
 [^3]: https://www.forbes.com/sites/elvaramirez/2019/05/22/make-mine-a-mocktail-why-the-non-alcoholic-drinks-trend-is-here-to-stay/?sh=33f6e9be3eb2 (last viewed 12/06/2023)
